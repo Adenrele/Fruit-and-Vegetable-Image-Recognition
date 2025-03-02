@@ -41,17 +41,13 @@ Trainable Parameters: 5,599,332
 ![ROACAUC](results/RocCurve.png)
 
 ### 🚀 Installation & Setup
-```bash git clone https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition.git
-```
+```bash git clone https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition.git ```
 
-```bash fruit-veg-classification.git
-```
+```bash fruit-veg-classification.git ```
 
-```bash cd fruit-veg-classification
-```
+```bash cd fruit-veg-classification ```
 
-```bash pip install -r requirements.txt
-```
+```bash pip install -r requirements.txt ```
 
 ## 🚀 Optimizations and Strategies  
 
