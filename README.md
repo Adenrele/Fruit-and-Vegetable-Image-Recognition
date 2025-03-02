@@ -1,7 +1,7 @@
 # 🍎🥦 Fruit and Vegetable Image Recognition Model  
 
 ## 📌 Project Overview  
-This project builds a **custom Convolutional Neural Network (CNN)** to classify images of fruits and vegetables. The model is trained on a dataset containing **36 classes**, with 100 images per class.  
+This project builds a **custom Convolutional Neural Network (CNN)** to classify images of fruits and vegetables. The model is trained on a dataset containing **36 classes**, with 100 images or less per class.  
 
 ---
 
@@ -9,20 +9,18 @@ This project builds a **custom Convolutional Neural Network (CNN)** to classify 
 
 ### **📝 Model Summary**  
 
-```bash
-----------------------------------------------------------------
-        Layer (type)               Output Shape         Param #
-================================================================
-          Conv2d-1           [-1, 32, 108, 108]          2,432
-          Conv2d-2            [-1, 64, 104, 104]         51,264
-       MaxPool2d-3            [-1, 64, 26, 26]               0
-          Linear-4                  [-1, 128]       5,540,992
-         Dropout-5                  [-1, 128]               0
-          Linear-6                  [-1, 36]           4,644
-================================================================
+| Layer (type)   | Output Shape        | Param #   |
+|---------------|--------------------|----------|
+| Conv2d-1      | [-1, 32, 108, 108] | 2,432    |
+| Conv2d-2      | [-1, 64, 104, 104] | 51,264   |
+| MaxPool2d-3   | [-1, 64, 26, 26]   | 0        |
+| Linear-4      | [-1, 128]          | 5,540,992 |
+| Dropout-5     | [-1, 128]          | 0        |
+| Linear-6      | [-1, 36]           | 4,644    |
+
 Total Parameters: 5,599,332  
 Trainable Parameters: 5,599,332  
-```
+
 
 ### 📊 Model Performance Metrics  
 
@@ -41,11 +39,11 @@ Trainable Parameters: 5,599,332
 ### 🚀 Installation & Setup
 ```git clone https://github.com/yourusername```
 
-```fruit-veg-classification.git```
+``` bash fruit-veg-classification.git```
 
-```cd fruit-veg-classification```
+``` bash cd fruit-veg-classification```
 
-```pip install -r requirements.txt```
+``` bash pip install -r requirements.txt```
 
 ## 🚀 Optimizations and Strategies  
 
@@ -58,14 +56,13 @@ To improve model performance and ensure efficient training, the following optimi
 
 ### 🔹 Regularization Techniques  
 - Implemented **Dropout (p=0.5)** in fully connected layers to reduce overfitting.  
-- Used **Batch Normalization** (if applicable) to stabilize training and improve convergence.  
 
 ### 🔹 Learning Rate Scheduling  
 - Utilized **ReduceLROnPlateau** to **adjust the learning rate dynamically** based on validation loss.  
-- If the validation loss did not improve for a few epochs, the learning rate was **reduced by a factor**, helping the model converge better.  
+- If the validation loss did not improve for 4 epochs, the learning rate was **reduced by a factor of 0.5**, helping the model converge better.  
 
 ### 🔹 Early Stopping  
-- **Monitored validation loss** and stopped training when performance stopped improving for **11 consecutive epochs**.  
+- **Monitored validation loss** and stopped training when performance stopped improving for **7 consecutive epochs**.  
 - This helped **prevent overfitting** and **saved computational resources** by avoiding unnecessary training cycles.  
 
 ### 🔹 Model Architecture Improvements  
@@ -75,7 +72,7 @@ To improve model performance and ensure efficient training, the following optimi
 
 ### 🔹 Loss Function & Optimization  
 - Used **CrossEntropyLoss** as the loss function for multi-class classification.  
-- Optimized with **Adam optimizer**, known for adaptive learning rates and efficient convergence.  
+- Optimized with **SGD**, known for good generalistion. 
 
 [Loss Over Epochs](results/LossEachEpoch.png.png) 
 
@@ -83,4 +80,6 @@ To improve model performance and ensure efficient training, the following optimi
 - Experiment with **pretrained models** (e.g., ResNet, EfficientNet).  
 - Implement **fine-tuning** on deeper architectures.  
 - Try **advanced augmentation** methods like Mixup and Cutout.  
-- Explore **hyperparameter tuning** using techniques like Grid Search or Bayesian Optimization.  
+- Explore **hyperparameter tuning** using techniques like Grid Search or Bayesian Optimization.
+- Consider deploying a database and an API to serve on any application.
+- Consider a feedback and monitoring system.  
