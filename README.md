@@ -33,12 +33,12 @@ Trainable Parameters: 5,599,332
 | **Recall**             | 0.906    |
 | **F1-Score**          | 0.906    |
 
-![Confusion Matrix](results/ConfusionMatrix.png.png) 
+![Confusion Matrix](results/ConfusionMatrix.png) 
 
 ![ROACAUC](results/RocCurve.png)
 
 ### 🚀 Installation & Setup
-```git clone https://github.com/yourusername```
+``` git clone https://github.com/yourusername```
 
 ``` bash fruit-veg-classification.git```
 
@@ -75,7 +75,7 @@ To improve model performance and ensure efficient training, the following optimi
 - Used **CrossEntropyLoss** as the loss function for multi-class classification.  
 - Optimized with **SGD**, known for good generalistion. 
 
-![Loss Over Epochs](results/LossEachEpoch.png.png) 
+![Loss Over Epochs](results/LossEachEpoch.png) 
 
 ### 📈 Future Improvements  
 - Experiment with **pretrained models** (e.g., ResNet, EfficientNet).  
