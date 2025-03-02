@@ -32,9 +32,10 @@ Trainable Parameters: 5,599,332
 | **Precision**          | 0.906   |
 | **Recall**             | 0.906    |
 | **F1-Score**          | 0.906    |
- **Confusion Matrix**    ![Confusion Matrix](results/ConfusionMatrix.png.png) 
 
-[ROACAUC](results/RocCurve.png)
+![Confusion Matrix](results/ConfusionMatrix.png.png) 
+
+![ROACAUC](results/RocCurve.png)
 
 ### 🚀 Installation & Setup
 ```git clone https://github.com/yourusername```
@@ -74,7 +75,7 @@ To improve model performance and ensure efficient training, the following optimi
 - Used **CrossEntropyLoss** as the loss function for multi-class classification.  
 - Optimized with **SGD**, known for good generalistion. 
 
-[Loss Over Epochs](results/LossEachEpoch.png.png) 
+![Loss Over Epochs](results/LossEachEpoch.png.png) 
 
 ### 📈 Future Improvements  
 - Experiment with **pretrained models** (e.g., ResNet, EfficientNet).  
