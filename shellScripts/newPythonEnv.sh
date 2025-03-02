@@ -6,5 +6,4 @@ pip install --upgrade pip
 pip install kaggle
 pip install --pre torch --index-url https://download.pytorch.org/whl/nightly/cpu
 pip install --pre torchvision --index-url https://download.pytorch.org/whl/nightly/cpu
-
 pip install python-dotenv
