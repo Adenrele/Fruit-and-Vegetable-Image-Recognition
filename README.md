@@ -9,6 +9,7 @@ This project builds a **custom Convolutional Neural Network (CNN)** to classify 
 
 ### **📝 Model Summary**  
 
+```bash
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
@@ -21,6 +22,7 @@ This project builds a **custom Convolutional Neural Network (CNN)** to classify 
 ================================================================
 Total Parameters: 5,599,332  
 Trainable Parameters: 5,599,332  
+```
 
 ### 📊 Model Performance Metrics  
 
@@ -32,15 +34,18 @@ Trainable Parameters: 5,599,332
 | **Precision**          | 0.906   |
 | **Recall**             | 0.906    |
 | **F1-Score**          | 0.906    |
-| **Confusion Matrix**   | ![Confusion Matrix](results/ConfusionMatrix.png.png) |
+ **Confusion Matrix**    ![Confusion Matrix](results/ConfusionMatrix.png.png) 
 
 [ROACAUC](results/RocCurve.png)
 
 ### 🚀 Installation & Setup
-`git clone https://github.com/yourusername`
-`fruit-veg-classification.git`
-`cd fruit-veg-classification`
-`pip install -r requirements.txt`
+```git clone https://github.com/yourusername```
+
+```fruit-veg-classification.git```
+
+```cd fruit-veg-classification```
+
+```pip install -r requirements.txt```
 
 ## 🚀 Optimizations and Strategies  
 
