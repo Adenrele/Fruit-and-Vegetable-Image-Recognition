@@ -8,7 +8,7 @@ This project builds a **custom Convolutional Neural Network (CNN)** to classify 
 ## 📊 Summary, Metrics & Optimizations  
 
 ### **📝 Model Summary**  
-```bash
+
 ----------------------------------------------------------------
         Layer (type)               Output Shape         Param #
 ================================================================
