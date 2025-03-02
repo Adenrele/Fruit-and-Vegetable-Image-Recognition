@@ -60,7 +60,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    "<h3 style='text-align: center;'><a> Github Repository</a> | <a href = 'https://adenrele.co.uk'>Adenrele.co.uk</a></h3>", 
+    "<h3 style='text-align: center;'><a href = 'https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition'> Github Repository</a> | <a href = 'https://adenrele.co.uk'>Adenrele.co.uk</a></h3>", 
     unsafe_allow_html=True
 )
 
