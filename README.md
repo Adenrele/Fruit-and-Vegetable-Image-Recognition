@@ -22,6 +22,7 @@ Total Parameters: 5,599,332
 Trainable Parameters: 5,599,332  
 
 
+
 ### 📊 Model Performance Metrics  
 
 | Metric                 | Value |
@@ -33,18 +34,24 @@ Trainable Parameters: 5,599,332
 | **Recall**             | 0.906    |
 | **F1-Score**          | 0.906    |
 
+
 ![Confusion Matrix](results/ConfusionMatrix.png) 
+
 
 ![ROACAUC](results/RocCurve.png)
 
 ### 🚀 Installation & Setup
-``` git clone https://github.com/yourusername```
+```bash git clone https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition.git
+```
 
-``` bash fruit-veg-classification.git```
+```bash fruit-veg-classification.git
+```
 
-``` bash cd fruit-veg-classification```
+```bash cd fruit-veg-classification
+```
 
-``` bash pip install -r requirements.txt```
+```bash pip install -r requirements.txt
+```
 
 ## 🚀 Optimizations and Strategies  
 
