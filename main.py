@@ -67,7 +67,7 @@ st.markdown(
 )
 
 st.markdown(
-    "<h3 style='text-align: center;'>Upload an image to identify it.</h3>", 
+    "<h3 style='text-align: center;'>Upload one of the 36 classes of fruit/vegetables in the chart below to identify it.</h3>", 
     unsafe_allow_html=True
 )
 
