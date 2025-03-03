@@ -62,7 +62,7 @@ st.markdown(
     unsafe_allow_html=True
 )
 st.markdown(
-    "<h3 style='text-align: center;'><a href = 'https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition'> Github Repository</a> | <a href = 'https://adenrele.co.uk'>Adenrele.co.uk</a></h3>", 
+    "<h3 style='text-align: center;'><a href = 'https://adenrele.co.uk'>Adenrele.co.uk</a></h3>", 
     unsafe_allow_html=True
 )
 
@@ -118,10 +118,4 @@ with col2:
                         st.table(results)
                 else:
                     st.warning("No predictions available. Please upload an image and try again.")
-#commands streamlit run main.py
-#pipreqs
-#procfile
-#setup.sh
-#git init
-#Heroku login
-#
+
