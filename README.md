@@ -3,6 +3,7 @@
 ## 📌 Project Overview  
 This project builds a **custom Convolutional Neural Network (CNN)** to classify images of fruits and vegetables. The model is trained on a dataset containing **36 classes**, with 100 images or less per class.  
 
+![Click here to use the app](https://adenrele.co.uk) 
 ---
 
 ## 📊 Summary, Metrics & Optimizations  
@@ -42,8 +43,6 @@ Trainable Parameters: 5,599,332
 
 ### 🚀 Installation & Setup
 ```git clone https://github.com/Adenrele/Fruit-and-Vegetable-Image-Recognition.git```
-
-```fruit-veg-classification.git```
 
 ```cd fruit-veg-classification```
 
