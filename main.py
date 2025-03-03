@@ -73,6 +73,7 @@ col1, col2 = st.columns([1, 1])
 
 with col1:
     st.image("results/PerClassAccuracy.png", use_container_width=True, caption= "Accuaracy of the model for each class it was trained on using the provided dataset." )
+    st.text("Note that classes with lower accuracy are those for which fewer samples were provided in the training dataset.")
 
 with col2:
     st.markdown("<br>", unsafe_allow_html=True)  

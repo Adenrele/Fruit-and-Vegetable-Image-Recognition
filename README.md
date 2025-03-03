@@ -47,7 +47,20 @@ Trainable Parameters: 5,599,332
 
 ```cd fruit-veg-classification```
 
+```python3.10 -m venv myenv```
+
+```source myenv/bin/activate``` 
+
 ```pip install -r requirements.txt```
+
+Download Kaggle dataset
+```python3 KaggleDownload.py script ```
+
+Convert all images to RGBA to avoid error during training 
+```python3 ConvertAllFIlesRGBA.py```
+
+Run streamlit app in localhost
+```sh shellScripts/launchStreanlit.sh```
 
 ## 🚀 Optimizations and Strategies  
 
