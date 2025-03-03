@@ -6,6 +6,8 @@ import torch.nn.functional as F
 import torchvision.transforms as transforms
 from PIL import Image
 
+
+st.set_page_config(page_title="Adenrele's Fruit & Vegetable Classifier", layout='wide')
 classes = ['apple', 'banana', 'beetroot', 'bell pepper', 'cabbage', 'capsicum', 'carrot', 'cauliflower',
            'chilli pepper', 'corn', 'cucumber', 'eggplant', 'garlic', 'ginger', 'grapes', 'jalepeno', 'kiwi', 'lemon',
            'lettuce', 'mango', 'onion', 'orange', 'paprika', 'pear', 'peas', 'pineapple', 'pomegranate', 'potato',
@@ -54,7 +56,7 @@ def load_model():
 
 net = load_model()
 
-st.set_page_config(page_title="Adenrele's Fruit & Vegetable Classifier", layout='wide')
+
 st.markdown(
     "<h1 style='text-align: center;'>🍏🥕 Adenrele's Fruit & Vegetable Image Classifier</h1>", 
     unsafe_allow_html=True
