@@ -33,7 +33,7 @@ Trainable Parameters: 5,599,332
 | **Validation Accuracy** | 92%   |
 | **Best Model Epoch**   | 46    |
 | **Precision**          | 0.93   |
-| **Recall**             | 0.82    |
+| **Recall**             | 0.92    |
 | **F1-Score**          | 0.92   |
 
 
