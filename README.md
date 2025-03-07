@@ -29,12 +29,12 @@ Trainable Parameters: 5,599,332
 
 | Metric                 | Value |
 |------------------------|-------|
-| **Validation Accuracy** | 91%   |
-| **Test Accuracy**      | 89%   |
-| **Best Model Epoch**   | 69    |
-| **Precision**          | 0.906   |
-| **Recall**             | 0.906    |
-| **F1-Score**          | 0.906    |
+| **Test Accuracy**      | 92%   |
+| **Validation Accuracy** | 92%   |
+| **Best Model Epoch**   | 46    |
+| **Precision**          | 0.93   |
+| **Recall**             | 0.82    |
+| **F1-Score**          | 0.92   |
 
 
 ![Confusion Matrix](results/ConfusionMatrix.png) 

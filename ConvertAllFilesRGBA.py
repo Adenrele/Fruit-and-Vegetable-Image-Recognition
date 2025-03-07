@@ -2,11 +2,10 @@ import os
 from PIL import Image
 from multiprocessing import Pool, cpu_count
 
-# Set your main dataset folder (contains Train, Validation, Test)
 main_folder = "KaggleData"
 output_folder = "RGBAKaggleData"
 
-os.makedirs(output_folder, exist_ok=True)  # Ensure output folder exists
+os.makedirs(output_folder, exist_ok=True) 
 
 def convert_image(file_info):
     """Convert image to RGBA (if necessary) and save it in the correct format."""
@@ -16,7 +15,7 @@ def convert_image(file_info):
         with Image.open(input_path) as img:
             # Convert to RGBA for formats like PNG
             if img.mode != 'RGBA' and img.format != 'JPEG':
-                img = img.convert("RGBA")  # Convert to RGBA if not JPEG
+                img = img.convert("RGBA") 
             else:
                 # Convert to RGB if saving as JPEG (since JPEG doesn't support alpha channel)
                 if img.format == 'JPEG':
@@ -24,7 +23,7 @@ def convert_image(file_info):
             
             # Ensure subfolder structure exists
             os.makedirs(os.path.dirname(output_path), exist_ok=True)
-            img.save(output_path)  # Save with the same format
+            img.save(output_path)  
         return f"Converted: {input_path} → {output_path}"
     
     except Exception as e:

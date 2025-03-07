@@ -15,35 +15,42 @@ classes = ['apple', 'banana', 'beetroot', 'bell pepper', 'cabbage', 'capsicum', 
 
 
 transform = transforms.Compose([
-    transforms.RandomResizedCrop(112, scale=(0.8, 1.0)),
-    transforms.RandomHorizontalFlip(p=0.5),
-    transforms.RandomRotation(degrees=15),
-    transforms.ColorJitter(brightness=0.2, contrast=0.2, saturation=0.2, hue=0.05),
+    transforms.Resize((128, 128)),  
+    transforms.CenterCrop(112), 
     transforms.ToTensor(),
     transforms.Normalize(mean=[0.485, 0.456, 0.406], std=[0.229, 0.224, 0.225])
 ])
 
+
+
 class Net(nn.Module):
     def __init__(self):
         super().__init__()
-        self.conv1 = nn.Conv2d(3, 32, kernel_size=5) 
-        self.conv2 = nn.Conv2d(32, 64, kernel_size=5) 
-        self.pool = nn.MaxPool2d(4, 4) 
-        self.fc1 = nn.Linear(43264, 128)  
+        self.conv1 = nn.Conv2d(3, 32, kernel_size=3, padding= 1) 
+        self.bn1 = nn.BatchNorm2d(32)
+        self.conv2 = nn.Conv2d(32, 64, kernel_size=3, padding= 1)
+        self.bn2 = nn.BatchNorm2d(64)
+        self.conv3 = nn.Conv2d(64, 128, kernel_size=3, padding=1) 
+        self.bn3 = nn.BatchNorm2d(128)
+        self.pool = nn.MaxPool2d(2, 2) 
+        self.fc1 = nn.Linear(100352, 512)  
         self.dropout = nn.Dropout(0.5)
-        self.fc2 = nn.Linear(128, 36)
+        self.fc2 = nn.Linear(512, 32)
 
     def forward(self, x):
-        x = F.relu(self.conv1(x))
-        x = F.relu(self.conv2(x))
-        x = self.pool(x)  
+        x = F.relu(self.bn1(self.conv1(x)))
+        x = F.relu(self.bn2(self.conv2(x)))
+        x = self.pool(x) 
+        x = F.relu(self.bn3(self.conv3(x)))
+        x = self.pool(x)
         x = torch.flatten(x, 1)
         x = F.relu(self.fc1(x))
         x = self.dropout(x)
         x = self.fc2(x)
         return x
-    
-@st.cache_data
+
+
+@st.cache_resource
 def load_model():
     model = Net()
     try:
@@ -67,14 +74,14 @@ st.markdown(
 )
 
 st.markdown(
-    "<h3 style='text-align: center;'>Upload one of the 36 classes of fruit/vegetables in the chart below to identify it.</h3>", 
+    "<h3 style='text-align: center;'>Upload one of the 32 classes of fruit/vegetables in the chart below to identify it.</h3>", 
     unsafe_allow_html=True
 )
 
 col1, col2 = st.columns([1, 1])
 
 with col1:
-    st.image("results/PerClassAccuracy.png", use_container_width=True, caption= "Accuaracy of the model for each class it was trained on using the provided dataset." )
+    st.image("results/f1_score_per_class.png", use_container_width=True, caption= "Accuaracy of the model for each class it was trained on using the provided dataset." )
     st.text("Note that classes with lower accuracy are those for which fewer samples were provided in the training dataset.")
 
 with col2: 
@@ -86,11 +93,13 @@ with col2:
 
     with sub_col1:
        
-        if uploaded_file is not None:
-            image = Image.open(io.BytesIO(uploaded_file.getvalue()))
-            resized_image = image.resize((224, 224))
-            st.image(resized_image, caption="Uploaded Image")
-
+         if uploaded_file is not None:
+            try:
+                image = Image.open(io.BytesIO(uploaded_file.getvalue())).convert("RGB")
+                resized_image = image.resize((224, 224)) 
+                st.image(resized_image, caption="Uploaded Image")
+            except Exception as e:
+                st.error(f"Error processing the image: {e}")
     with sub_col2:
         def predict(image, model):
             if model is None or image is None:
