@@ -13,15 +13,16 @@ This project builds a custom Convolutional Neural Network (CNN) to classify imag
 
 | Layer (type)   | Output Shape        | Param #   |
 |---------------|--------------------|----------|
-| Conv2d-1      | [-1, 32, 108, 108] | 2,432    |
-| Conv2d-2      | [-1, 64, 104, 104] | 51,264   |
-| MaxPool2d-3   | [-1, 64, 26, 26]   | 0        |
-| Linear-4      | [-1, 128]          | 5,540,992 |
-| Dropout-5     | [-1, 128]          | 0        |
-| Linear-6      | [-1, 36]           | 4,644    |
+| Conv2d-1      | [-1, 24, 128, 128] | 672    |
+| MaxPool2d-2   | [-1, 24,64, 64]   | 0        |
+| Linear-4      | [-1, 320]          | 31,457,600 |
+| Dropout-5     | [-1, 320]          | 0        |
+| Linear-6      | [-1, 64]           | 20,544    |
+| Dropout-7      | [-1, 64]           |    |
+| Linear-8      | [-1, 32]           | 2,080   |
 
-Total Parameters: 5,599,332  
-Trainable Parameters: 5,599,332  
+Total params: 31,480,896
+Trainable params: 31,480,896 
 
 
 
