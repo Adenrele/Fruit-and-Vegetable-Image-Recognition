@@ -22,6 +22,7 @@ This project builds a custom Convolutional Neural Network (CNN) to classify imag
 | Linear-8      | [-1, 32]           | 2,080   |
 
 Total params: 31,480,896
+
 Trainable params: 31,480,896 
 
 
